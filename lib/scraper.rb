@@ -22,13 +22,13 @@ class Scraper
     profiles.css("div.social-icon-container").each do |social| 
       social.each do |element| 
         if element.attr('href').include?("twitter")
-          return_hash[:twitter] = element.attr('href')
+          students[:twitter] = element.attr('href')
         elsif element.attr('href').include?("linkedin")
-          return_hash[:linkedin] = element.attr('href')
+          students[:linkedin] = element.attr('href')
         elsif element.attr('href').include?("github")
-          return_hash[:github] = element.attr('href')
+          students[:github] = element.attr('href')
         elsif element.attr('href').end_with?("com/")
-          return_hash[:blog] = element.attr('href')
+          students[:blog] = element.attr('href')
         end
       students[:profile_quote] = profiles.css(".vitals-container .vitals-text-container .profile-quote").text
       students[:bio] = profiles.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
