@@ -30,6 +30,7 @@ class Scraper
         elsif element.attr('href').end_with?("com/")
           students[:blog] = element.attr('href')
         end
+      end
       students[:profile_quote] = profiles.css(".vitals-container .vitals-text-container .profile-quote").text
       students[:bio] = profiles.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
     end
