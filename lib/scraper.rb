@@ -29,7 +29,6 @@ class Scraper
        else
          students[:blog] = social.attribute("href").value
        end
-     end
       students[:profile_quote] = profiles.css(".vitals-container .vitals-text-container .profile-quote").text
       students[:bio] = profiles.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
     end
